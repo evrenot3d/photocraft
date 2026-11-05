@@ -5,7 +5,18 @@ Licensed under the MIT License or the Apache License, Version 2.0, at your optio
 
 The ArtCraft name, wordmark and logos in docs/brand/ are trademarks of the ArtCraft Team. They are
 not open source and are not covered by the license above; their terms are in
-docs/brand/LICENSE-brand.txt.
+docs/brand/LICENSE-brand.txt. As those terms require of forks, the ArtCraft logo files have been
+removed from this copy.
+
+PhotoCraft Evren
+----------------
+This is a modified version of PhotoCraft ("PhotoCraft Evren", https://github.com/evrenot3d/photocraft),
+based on PhotoCraft by the ArtCraft team and community (https://github.com/storytold/photocraft). It is
+not made, sponsored or endorsed by the ArtCraft Team. The changes are the add-ons in
+crates/ui-egui/src/evren/, crates/engine/src/cmd/evren_*_cmds.rs and evren_ai/, plus small hook lines in
+other files, each marked with the comment "EVREN eklentisi" (EVREN add-on). They are licensed under the
+same MIT OR Apache-2.0 terms. The AI models that evren_ai/install.ps1 downloads are not part of this
+repository and keep their own licenses; see evren_ai/MODELS.md.
 
 Third-party material
 

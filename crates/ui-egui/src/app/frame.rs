@@ -215,6 +215,8 @@ impl PhotocraftApp {
         // A menu or dialog can start a filter after `jobs_ui::tick` ran in this frame. Keep
         // polling it even when the platform would otherwise put the event loop to sleep.
         jobs_ui::keep_polling(self, &ctx);
+        // EVREN eklentisi: 360 Ayarları ve yapay zekâ araçlarının pencereleri.
+        crate::evren::pencereler(self, &ctx);
         // Menus and buttons in this frame may have asked for a file dialog.
         self.poll_file_dialog(&ctx, Some(frame));
         // The Type tool's IME descriptor is the last writer of this pass: every panel and the

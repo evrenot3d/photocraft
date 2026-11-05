@@ -1,0 +1,18 @@
+# EVREN eklentisi: PhotoCraft "Gürültü temizleme" aracının yardımcısı (Intel Open Image Denoise).
+# PhotoCraft'ın çalışma alanının (workspace) parçası DEĞİL: kendi başına derlenir, çıktısı
+# evren_ai\oidn\bin\evren_oidn.exe olarak OIDN DLL'lerinin yanına kopyalanır (derle.ps1).
+[package]
+name = "evren_oidn"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[workspace]

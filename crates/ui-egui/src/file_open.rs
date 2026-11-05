@@ -93,6 +93,7 @@ impl PhotocraftApp {
     /// `path` for File › Save unless it is a derivative preview, and `path` goes to the top of Open Recent. Returns the import
     /// warnings (also shown to the user).
     pub fn open_file(&mut self, path: &str, bytes: &[u8]) -> Result<Vec<String>, String> {
+        if let Some(r) = crate::evren::pdf_ui::yakala(self, path) { return r; } // EVREN eklentisi: PDF İçe Aktar
         // Brushes/gradients go to the preset libraries (no document, no Open Recent entry).
         if let Some(r) = crate::preset_files_ui::open(self, path, bytes) {
             return r.map(|()| Vec::new());
@@ -131,6 +132,7 @@ impl PhotocraftApp {
     /// Read and open the file at `path` (see [`open_file`](Self::open_file)).
     #[cfg(not(target_arch = "wasm32"))]
     pub fn open_path(&mut self, path: &str) -> Result<Vec<String>, String> {
+        if let Some(r) = crate::evren::pdf_ui::yakala(self, path) { return r; } // EVREN eklentisi: PDF İçe Aktar
         if self.show_if_open(path) {
             return Ok(Vec::new());
         }

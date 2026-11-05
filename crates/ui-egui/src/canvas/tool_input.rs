@@ -336,6 +336,14 @@ pub fn tool_event(app: &mut PhotocraftApp, ev: ToolEvent, mods: egui::Modifiers)
     if handle_eyedropper_event(app, tool, ev, mods) {
         return;
     }
+    // EVREN eklentisi: Taşıma aracıyla 360 katmanını çevirme.
+    if crate::evren::pano_ui::pointer(app, tool, ev, mods) {
+        return;
+    }
+    // EVREN eklentisi: Çizgi aracı (Fırça seçiliyken, Procreate QuickShape gibi).
+    if crate::evren::cizgi_ui::pointer(app, tool, ev, mods) {
+        return;
+    }
     // A locked layer (the Background without a selection, say): no drag, and Photoshop's message
     // once the pointer moves (a click says nothing). ⌘ with a selection tool here (#896); the Move
     // tool below, once Auto-Select has picked the layer.

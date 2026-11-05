@@ -1,0 +1,10 @@
+# Büyük ve yerel dosyalar git'e girmez (Python ortamı, ComfyUI, modeller, çalışma dosyaları).
+.venv/
+ComfyUI/
+calisma/
+gokyuzu_kutuphanesi/
+__pycache__/
+*.log
+ayarlar.json
+oidn/
+oidn_yardimci/target/

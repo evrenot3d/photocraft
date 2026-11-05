@@ -22,6 +22,7 @@ const OPEN_EXTS: &[&str] = &[
     "ico", "qoi", "exr", "hdr", "pbm", "pgm", "ppm", "pnm", "pam", "pfm", "pcx", "dds", "xpm", "fits", "fit", "fts", "dpx", "cin", "dcm", "dicom", "dc3",
     "iff", "lbm", "ilbm", "heic", "heif", "hif", "dng", "cr2", "cr3", "nef", "nrw", "arw", "pef", "orf", "rw2", "raf", "abr", "grd", "asl", "svg", "svgz",
     "aco", "act", "ase", "kys", "af", "afdesign", "afphoto", "afpub",
+    "pdf", // EVREN eklentisi: PDF İçe Aktar (evren/pdf_ui.rs)
 ];
 const SVG_EXTS: &[&str] = &["svg", "svgz"];
 
@@ -48,6 +49,7 @@ const OPEN_FILTERS: &[(&str, &[&str])] = &[
     ("OpenRaster", &["ora"]),
     ("Paint.NET", &["pdn"]),
     ("SVG", SVG_EXTS),
+    ("PDF", &["pdf"]), // EVREN eklentisi
     ("PNG", &["png"]),
     ("JPEG", &["jpg", "jpeg"]),
     ("HEIF", &["heic", "heif", "hif"]),

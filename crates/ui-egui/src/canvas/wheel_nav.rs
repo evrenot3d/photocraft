@@ -385,6 +385,8 @@ pub fn read_with(
     if !hovered {
         return None;
     }
+    // EVREN eklentisi: Zoom with Scroll Wheel açıkken Ctrl / Alt + tekerlek de yakınlaştırır, kaydırmaz.
+    let (alt, evren_tus_yok_say) = if zoom_with_wheel { (false, true) } else { (alt, false) };
 
     // --- Input classification (hovered viewport only) ---
     // The wheel events that belong to the gesture in progress: Shift+Alt (snap zoom), Alt-only
@@ -400,7 +402,7 @@ pub fn read_with(
             } else if shift {
                 m.shift && !m.alt && !m.command && !m.ctrl
             } else {
-                !m.alt && !m.shift && !m.command && !m.ctrl
+                !m.shift && (evren_tus_yok_say || (!m.alt && !m.command && !m.ctrl)) // EVREN eklentisi
             }
         })
         .fold((Vec2::ZERO, Vec2::ZERO), |(sum, instant), (unit, delta, _, unsmoothed)| {

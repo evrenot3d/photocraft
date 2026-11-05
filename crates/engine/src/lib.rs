@@ -113,6 +113,8 @@ pub use cmd::layer_menu_cmds;
 pub use cmd::layer_multi_cmds;
 pub use cmd::layer_nav_cmds;
 pub use cmd::layer_xmp_cmds;
+pub use cmd::evren_pano_cmds;
+pub use cmd::evren_ai_cmds;
 pub use cmd::lens_cmds;
 pub use cmd::magnetic_cmds;
 pub use cmd::mask_view_cmds;

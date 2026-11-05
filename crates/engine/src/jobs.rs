@@ -987,6 +987,8 @@ impl Session {
     /// Edit › Transform › Again (and Again on a Copy) is not replayable and keeps the concrete
     /// steps it ran instead.
     fn after_command(&mut self, id: &str, params: Value, journal: bool, nested_from: Option<usize>, pre_selected: Option<&[LayerId]>) {
+        // EVREN eklentisi: 360 katmanında filtre / ayarlama kürenin tamamına, birleştirme küreye.
+        crate::evren_pano_cmds::after_command(self, id, &params);
         // A layer-mask view ends when another layer becomes active (#196).
         if let Some(st) = self.active_mut() {
             crate::mask_view_cmds::fix(st);

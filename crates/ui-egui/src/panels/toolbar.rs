@@ -132,7 +132,9 @@ pub fn toolbar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 + chips_height(t.pro, t.round_chips, t.round_chips && double)
                 + 8.0
                 + if double { bx } else { bx * 2.0 + 3.0 }
-                + 6.0;
+                + 6.0
+                // EVREN eklentisi: en alttaki kendi düğmelerimize yer.
+                + crate::evren::arac_cubugu::yukseklik(bx, double);
             // As tall as the tools, so the colour chips sit right under them (Photoshop); a column
             // taller than the window scrolls and keeps the chips at the bottom.
             egui::ScrollArea::vertical()
@@ -381,6 +383,8 @@ pub fn toolbar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                     }
                 });
             });
+            // EVREN eklentisi: sol menünün en altında kendi düğmelerimiz (360, Upscale, Alan derinliği, Bitki, Cam, Gökyüzü).
+            crate::evren::arac_cubugu::dugmeler(app, ui, bx);
         });
 }
 

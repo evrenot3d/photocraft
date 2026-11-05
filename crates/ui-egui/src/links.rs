@@ -8,9 +8,10 @@ use crate::PhotocraftApp;
 
 pub const DISCORD: &str = "https://discord.gg/artcraft";
 pub const ARTCRAFT_WEBSITE: &str = "https://getartcraft.com";
-pub const APP_PAGE: &str = "https://getartcraft.com/apps/photocraft";
-pub const GITHUB: &str = "https://github.com/storytold/photocraft";
-pub const ISSUES: &str = "https://github.com/storytold/photocraft/issues";
+// EVREN eklentisi: forkun sayfası, deposu ve hata bildirimi (Discord ve ArtCraft sitesi teşekkür olarak kalır).
+pub const APP_PAGE: &str = "https://github.com/evrenot3d/photocraft#readme";
+pub const GITHUB: &str = "https://github.com/evrenot3d/photocraft";
+pub const ISSUES: &str = "https://github.com/evrenot3d/photocraft/issues";
 
 /// Help-menu link commands: (id, url). Labels live in `menus::UI_COMMANDS`.
 pub const COMMANDS: &[(&str, &str)] =

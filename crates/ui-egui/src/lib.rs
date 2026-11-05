@@ -15,6 +15,10 @@
 pub const UPDATE_APP: craft_update::app::App = craft_update::app::App {
     icon_png: Some(include_bytes!("../../../assets/app-icon/hicolor/128x128/apps/ai.storyteller.photocraft.png")),
     accent: Some([0x2f, 0x7b, 0xf5]),
+    // EVREN eklentisi: güncellemeler bu forkun sürümlerinden gelir (resmi sürüm eklentileri silmesin).
+    repo: crate::evren::FORK_REPO,
+    name: "PhotoCraft Evren",
+    developer: "PhotoCraft Evren",
     ..craft_update::suite::PHOTOCRAFT
 };
 
@@ -71,6 +75,8 @@ pub use file_open::OsEvent;
 pub use state::{Tool, UiState};
 
 mod app;
+// EVREN eklentileri (360 derece katmanı …): src/evren/.
+mod evren;
 mod input;
 mod prefs;
 mod services;

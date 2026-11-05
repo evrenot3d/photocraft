@@ -105,6 +105,10 @@ pub mod layer_nav_cmds;
 mod layer_params;
 mod layer_references;
 pub mod layer_xmp_cmds;
+// EVREN eklentisi: 360 derece katmanı.
+pub mod evren_pano_cmds;
+// EVREN eklentisi: yapay zekâ araçları (Upscale, Alan derinliği, Bitki/Cam, Gökyüzü).
+pub mod evren_ai_cmds;
 pub mod lens_cmds;
 pub mod magnetic_cmds;
 pub mod mask_view_cmds;
@@ -1399,6 +1403,9 @@ fn build() -> Vec<CommandSpec> {
     v.extend(crate::mask_view_cmds::specs());
     v.extend(crate::layer_mask_props_cmds::specs());
     v.extend(crate::actions_cmds::specs());
+    // EVREN eklentisi: 360 derece katmanı.
+    v.extend(crate::evren_pano_cmds::specs());
+    v.extend(crate::evren_ai_cmds::specs());
     // The dispatch guard's unit test needs a command that panics on purpose (REL-3).
     #[cfg(test)]
     v.push(test_panic_command());

@@ -572,6 +572,8 @@ pub(crate) fn show(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
     style.right_to_left = crate::direction::is_rtl();
     style.new_dock_zones = true;
     let style = style.localized(|key| DOCK_LABELS.iter().find(|(k, _)| *k == key).map(|(_, english)| tl!(english).to_string()));
+    // EVREN eklentisi: sütunlar arasındaki boyanmayan boşluk (tuval ile panel sütunu arası) siyah görünmesin.
+    ui.painter().rect_filled(ui.max_rect(), 0.0, t.chrome);
     let mut dock = craft_ui::docking::DockArea::new(area)
         .locked(locked)
         .auto_collapse_iconic(app.session.prefs().workspace.auto_collapse_icon_panels)

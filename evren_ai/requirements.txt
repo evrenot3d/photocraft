@@ -1,0 +1,14 @@
+# PhotoCraft Evren AI add-ons — Python packages besides ComfyUI's own requirements.
+# PyTorch is installed first by install.ps1 (CUDA 12.8 build, NVIDIA RTX 20xx – 50xx).
+transformers==4.57.6
+huggingface_hub>=0.36,<1.0
+accelerate>=1.0
+numpy>=2.0
+pillow>=11.0
+opencv-python>=4.10
+websocket-client>=1.8
+safetensors>=0.4
+# ComfyUI-SUPIR (Upscale with SUPIR)
+open-clip-torch>=2.24.0
+pytorch-lightning>=2.5.5
+omegaconf

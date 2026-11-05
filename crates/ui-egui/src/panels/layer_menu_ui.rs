@@ -149,6 +149,8 @@ pub fn show(app: &crate::PhotocraftApp, ui: &mut egui::Ui, l: &Layer, on_set: bo
         let mut rename = false;
         let has_selection = app.session.active().is_some_and(|s| s.doc.selection.is_some());
         items(app, ui, l, on_set, entries(l, on_set, has_selection), actions);
+        // EVREN eklentisi: 360 Derece Yap / 360 Ayarları / 360'ı Kapat.
+        crate::evren::pano_ui::layer_menu(app, ui, l, on_set, actions);
         ui.separator();
         if ui.button(tl!("Rename Layer…")).clicked() {
             rename = true;

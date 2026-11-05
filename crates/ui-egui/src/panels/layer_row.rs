@@ -195,6 +195,8 @@ pub(super) fn layer_row(
     let thumb = Rect::from_min_size(pos2(x, rect.center().y - ts / 2.0), vec2(ts, ts));
     if ts > 0.0 {
         draw_layer_thumb(app, ctx, ui, doc, l, thumb, row.primary);
+        // EVREN eklentisi: 360 katmanına turuncu rozet.
+        crate::evren::pano_ui::row_badge(ui, l, thumb);
         x += ts + 6.0;
     }
     // With thumbnails disabled the labels and disclosure controls remain interactive.
